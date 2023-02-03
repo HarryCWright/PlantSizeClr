@@ -21,7 +21,7 @@ Figure 1 A-F shows the general protocol and pipeline using the presented scripts
 <p align="center">
   <img src="https://user-images.githubusercontent.com/104008615/216567524-8fb0970a-f0c6-41cb-9e39-6877a8ba120d.png" />
 </p>
-Figure 1: The framework for determining the size and colour of objects for plant phenotyping. The steps consist of (A) converting the raw file into a jpg file (optional) using the script NEF2JPG.py, (B) doing a background correction to account for the vignette effect by the camera lens using the BG_Corr.py file, (C) colour correction using a colour checker card using ClrCorr.py, (D) cropping of image for object identification using Crop.py, (E) removal of the white background using BGRem.py (F) separation of objects using ObID.py and (G) determination of the size and colour of objects using SizeClr.py
+Figure 1: The framework for determining the size and colour of objects for plant phenotyping. The steps consist of (A) converting the raw file into a jpg file (optional) using the script NEF2JPG.py, (B) doing a background correction to account for the vignette effect by the camera lens using the BG_Corr.py file, (C) colour correction using a colour checker card using ClrCorr.py, (D) cropping of image for object identification using Crop.py, (E) removal of the white background using BGRem.py (F) separation of objects using ObID.py and (G) determination of the size and colour of objects using SizeClr.py<br>
 
 Above text and figure from: Wright, H.C. *et al.*, L. Free and Open-Source Software for object detection, size, and colour determination for use in plant phenotyping. *Plant Methods.* (Submitted). (I.F. 5.82)
 
