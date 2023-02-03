@@ -6,9 +6,9 @@ Figure 1 A-F shows the general protocol and pipeline using the presented scripts
 1.	A background image should be taken with the digital camera to perform a background correction that corrects for any light gradient due to the camera sensor or inhomogeneous lighting conditions. An example of a background image is provided in supplementary file S1.
 2.	Photograph plant tissue using a digital camera, ensuring that plant tissue, colour checker board as well as an object of known size are all visible in the photo. Background removal and object separation relies on using a white background so users should capture images with a white background. The colour checker should be in a landscape orientation and the object of interest should be the left most object (other than the colour checker board) an example of a good image is given in Figure 1 A and in more detail in supplementary file S2.
 
-Note 1: Software scripts are available for photos taken in both landscape and portrait, if using the SpyderChecker24 colour checker, the light blue swab should be in the top right.
+*Note 1: Software scripts are available for photos taken in both landscape and portrait, if using the SpyderChecker24 colour checker, the light blue swab should be in the top right.*
  
-Note 2: Photographs can be taken in any lighting condition; however, the use of natural light or a light box reduces the initial error of the images. It is important to ensure that there are no shadows cast onto the image or projected from the plant tissues, as this affects colour correction and object separation.
+*Note 2: Photographs can be taken in any lighting condition; however, the use of natural light or a light box reduces the initial error of the images. It is important to ensure that there are no shadows cast onto the image or projected from the plant tissues, as this affects colour correction and object separation.*
 
 3.	If images are captured in RAW format, they need to be converted to *.jpg format, if a Nikon camera is used that saves RAW files as *.NEF file, then the included script NEF2JPG.py can be used to convert the file to jpg. This script can batch process all the files in a folder.
 4.	Background correction is done on the *.jpg files. The script BG_Corr.py is able to batch process all files in a particular folder. The script will prompt you to select the background image file captured for background correction. It will then ask you for the folder with all the images that required background correction before corrected the files. Files will be saved using their initial filename plus ”_BGcorrected.jpg”.
@@ -18,9 +18,12 @@ Note 2: Photographs can be taken in any lighting condition; however, the use of 
 8.	Object separation is done using the script ObID.py which will prompt the user to select the folder which has the image files for object separation. Once the script is run, an image will be displayed with an identified object highlighted and the user will be asked to give this object a name in the IDE software used to run the script. The object will then be saved as a jpg file with this name. This will then repeat for the next object in the image and once all objects have been named the script will move to the next image in the folder. 
 9.	Finally colour and size information can be extracted from the individual saved objects. This is done using the script SizeClr.py. This will prompt the user for the folder with the separated object images and for the file that contains the object of known size. The user will be prompted for the height and width of the object in the unit of interest and should enter this in the IDE. The script will then work through each of the objects and extract their size data (width, height and area) as well as the colour in three colour spaces; RGB, YUV and CIELAB. For CIELAB it is assumed that the observer is 2° and the illuminant is a CIE standard illuminant D65. If this is not the case the user should change these values on line 583-585 of script PlantSzClr.py. Colour and size information is saved in a new .csv file. The user will be prompted to give the name of this csv file and information is saved in columns as shown in Figure 1 F.
 
-![Pipeline](https://user-images.githubusercontent.com/104008615/216567524-8fb0970a-f0c6-41cb-9e39-6877a8ba120d.png)
-
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/104008615/216567524-8fb0970a-f0c6-41cb-9e39-6877a8ba120d.png" />
+</p>
 Figure 1: The framework for determining the size and colour of objects for plant phenotyping. The steps consist of (A) converting the raw file into a jpg file (optional) using the script NEF2JPG.py, (B) doing a background correction to account for the vignette effect by the camera lens using the BG_Corr.py file, (C) colour correction using a colour checker card using ClrCorr.py, (D) cropping of image for object identification using Crop.py, (E) removal of the white background using BGRem.py (F) separation of objects using ObID.py and (G) determination of the size and colour of objects using SizeClr.py
+
+Above text and figure from: Wright, H.C. *et al.*, L. Free and Open-Source Software for object detection, size, and colour determination for use in plant phenotyping. *Plant Methods.* (Submitted). (I.F. 5.82)
 
 ## Required Packages
 cv2 version 4.5.1<br>
